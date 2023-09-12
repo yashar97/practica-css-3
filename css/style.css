@@ -1,0 +1,279 @@
+:root {
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+}
+
+/* header */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-links:target {
+    transform: translateY(0);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--grayish-blue);
+}
+
+.cta {
+    display: inline-block;
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+    width: 180px;
+    padding: 0.8em 1.5em;
+    text-align: center;
+    border-radius: 3em;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* hero main section */
+.hero-main {
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+}
+
+.texts-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-texts {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.hero-paragraph {
+    line-height: 1.5;
+    color: var(--grayish-blue);
+    width: 80%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    font-weight: 400;
+}
+
+.hero-background {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    background-image: url(../images/bg-intro-desktop.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-background::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/image-mockups.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+/* main */
+
+.easybank {
+    background: var(--very-light-gray);
+}
+
+.easybank-container {
+    /* margin-top: 4em; */
+    padding: 4em 3em;
+}
+
+.easybank-container h2 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    font-weight: 400;
+}
+
+.easybank-container p {
+    width: 50%;
+    margin-top: 1.5em;
+    line-height: 1.5;
+    color: var(--grayish-blue);
+}
+
+.easybank-articles {
+    padding: 3em 3em;
+    display: flex;
+    gap: 2em;
+}
+
+.easybank-article {
+    padding: 1em;
+}
+
+.easybank-article h3 {
+    margin-top: 1.5em;
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+.easybank-article p {
+    margin-top: 1.5em;
+    color: var(--grayish-blue);
+}
+
+.latest h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--dark-blue);
+    margin-top: 2em;
+}
+
+.latest-articles {
+    display: flex;
+    gap: 1em;
+    padding: 2em;
+}
+
+.latest-article-picture {
+    width: 100%;
+    height: 60%;
+}
+
+.latest-article-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.latest-texts {
+    padding: 1.5em;
+    display: grid;
+    gap: 0.5em;
+}
+
+.latest-author {
+    font-size: 0.8rem;
+    color: var(--grayish-blue);
+}
+
+.latest-subtitle {
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+}
+
+.latest-copy {
+    color: var(--grayish-blue);
+}
+
+.latest-article-img {
+    border-radius: 6px 6px 0 0;
+}
+
+.footer {
+    background: var(--dark-blue);
+    margin-top: 4em;
+}
+
+.footer-container {
+    padding: 3em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-logo-container {
+    display: grid;
+    gap: 3em;
+}
+
+.footer-cta {
+    display: grid;
+    gap: 3em;
+}
+
+.footer-cta p {
+    color: var(--grayish-blue);
+}
+
+.nav-icon {
+    display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .nav .cta {
+        display: none;
+    }
+
+    .nav-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2em;
+        position: fixed;
+        top: 70px;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+        background-color: var(--light-grayish-blue);
+        border-radius: 6px;
+        padding: 2em;
+        transform: translateY(-150%);
+        transition: 0.5s ease all;
+    }
+
+    .hero-main {
+        flex-direction: column-reverse;
+    }
+
+
+}
